@@ -253,15 +253,19 @@ That page exposes:
 - a **Matches** tab containing the complete tracked match-ID ledger as a plain
   list, including discovered or dropped IDs that have no roster;
 - a **Players** tab containing the deduplicated public player names represented
-  by the headline count;
-- cursor-based loading so the full rolling window remains reachable without
-  one unbounded response;
+  by the headline count, followed by each identity's distinct retained match
+  count in the window;
+- numbered pages with direct page selection so the full rolling window remains
+  reachable without one unbounded response;
+- player sorting by match count (highest first) or alphabetically;
 - a queue filter shared by both tabs.
 
 The Players tab uses the same identity rules as the count. Its global view
 contains each public player ID once. A queue filter reads the separate
 player-and-queue presence index, so a player who used Ranked and Casual appears
 in both corresponding filtered lists without being counted twice globally.
+The match count beside a player is also recalculated for the selected queue, so
+it describes the visible filter rather than an unrelated global total.
 
 This lets readers distinguish three quantities that should never be confused:
 
