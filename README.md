@@ -42,6 +42,8 @@ This repository contains PaladinsCat's **public release artifacts, technical doc
 |:---|:---|
 | [The Int16 Skin ID API Failure](docs/blog/public-release/skin-id-overflow.md) | Why skin IDs above 32,767 trigger the Int16 failure, with a database-sourced list of known affected skins |
 | [Beyond the Int16 Overflow](docs/blog/public-release/beyond-int16-match-recovery.md) | How one broken skin truncates a raw Hi-Rez match response—and how PaladinsCat rebuilds the missing players with visible provenance |
+| [When Match Recovery Stops](docs/blog/public-release/when-match-recovery-stops.md) | Why PaladinsCat preserves verified partial evidence, stops bounded recovery, and excludes limited matches from aggregate statistics |
+| [How PaladinsCat Counts Active Players](docs/blog/public-release/how-paladinscat-counts-active-players.md) | A transparent guide to the rolling 24-hour player total, overlapping queue counts, platform enrichment, private identities, and dropped matches |
 
 ## License
 
