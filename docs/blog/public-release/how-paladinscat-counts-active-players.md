@@ -250,17 +250,18 @@ opens the [activity evidence page](https://paladinscat.com/stats/activity/detail
 
 That page exposes:
 
-- every match ID retained in the tracked rolling window, loaded in pages;
-- the queue, region, map, observation time, and acquisition state;
-- the player names retained for each match;
-- player names grouped by known platform;
-- a queue filter that preserves cross-queue participation;
-- discovered or dropped IDs even when no roster could be obtained.
+- a **Matches** tab containing the complete tracked match-ID ledger as a plain
+  list, including discovered or dropped IDs that have no roster;
+- a **Players** tab containing the deduplicated public player names represented
+  by the headline count;
+- cursor-based loading so the full rolling window remains reachable without
+  one unbounded response;
+- a queue filter shared by both tabs.
 
-The detail page intentionally lists match-scoped observations rather than a
-second deduplicated headline. A player can appear in multiple matches and
-multiple queue filters because those appearances are the evidence from which
-the unique count is derived.
+The Players tab uses the same identity rules as the count. Its global view
+contains each public player ID once. A queue filter reads the separate
+player-and-queue presence index, so a player who used Ranked and Casual appears
+in both corresponding filtered lists without being counted twice globally.
 
 This lets readers distinguish three quantities that should never be confused:
 
