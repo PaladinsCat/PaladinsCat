@@ -172,6 +172,45 @@ For the same reason, the transparency view does not publish a guessed identity
 for a private participant. It shows the retained match evidence with a private
 label.
 
+### Reading the unresolved `+0–N` range
+
+The confirmed public-player number remains the headline count. Beside it,
+PaladinsCat publishes an unresolved range in the form `+0–N`:
+
+- the **lower addition is zero**, because every unresolved slot could belong to
+  a public player who was already counted elsewhere in the window;
+- the **upper addition is N**, the deliberately conservative case in which
+  every unresolved human slot belongs to a different person who appears
+  nowhere else.
+
+For a complete stored roster, only its explicitly private or unresolved human
+rows contribute to `N`. For a partial, limited, dropped, or still-unavailable
+match, the missing human capacity also contributes:
+
+| Queue participant model | Maximum human slots used for uncertainty |
+|:---|---:|
+| PvP | 10 |
+| Training / bots | 5 |
+| PvE / Wave Defense | 5 |
+
+Training and PvE matches never reserve ten human slots: the enemy side is AI,
+so their theoretical human maximum is five. A complete training match with one
+known human and no unresolved human row adds zero. The same match with one
+unresolved private human adds one. A training match with no usable roster can
+add at most five.
+
+The possible unique-player interval is therefore:
+
+```text
+confirmed public players
+  through
+confirmed public players + unresolved-slot upper bound
+```
+
+This is a transparency bound, not a statistical estimate or confidence
+interval. The real value can fall anywhere inside it, and the upper bound will
+usually overstate reality because players participate in multiple matches.
+
 ---
 
 ## How platform grouping is populated
