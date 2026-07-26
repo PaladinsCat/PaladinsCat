@@ -185,19 +185,13 @@ PaladinsCat publishes an unresolved range in the form `+0–N`:
 
 For a complete stored roster, only its explicitly private or unresolved human
 rows contribute to `N`. For a partial, limited, dropped, or still-unavailable
-match, the missing human capacity also contributes:
+PvP match, missing capacity can contribute up to ten human slots.
 
-| Queue participant model | Maximum human slots used for uncertainty |
-|:---|---:|
-| PvP | 10 |
-| Training / bots | 5 |
-| PvE / Wave Defense | 5 |
-
-Training and PvE matches never reserve ten human slots: the enemy side is AI,
-so their theoretical human maximum is five. A complete training match with one
-known human and no unresolved human row adds zero. The same match with one
-unresolved private human adds one. A training match with no usable roster can
-add at most five.
+Training and PvE matches are handled differently. They can be started by a
+single player, so unused team capacity is not evidence that another person was
+present. These queues contribute only private or unresolved human roster rows
+that Hi-Rez actually reported. A training or PvE match with no usable roster
+therefore adds zero—not five—to the unresolved range.
 
 The possible unique-player interval is therefore:
 
