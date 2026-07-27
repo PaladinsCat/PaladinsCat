@@ -1,3 +1,7 @@
+---
+publishedAt: "2026-07-25T05:46:36-04:00"
+---
+
 <!--
   PaladinsCat Blog — 24-hour observed active-player methodology
   Public-facing content. No source-code or private infrastructure references.

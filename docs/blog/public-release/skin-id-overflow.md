@@ -1,3 +1,7 @@
+---
+publishedAt: "2026-07-16T14:28:04-04:00"
+---
+
 <!--
   PaladinsCat Blog — Skin ID Int16 API Failure Analysis
   Public-facing content. No source code or backend internals.

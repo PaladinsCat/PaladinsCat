@@ -1,3 +1,7 @@
+---
+publishedAt: "2026-07-16T15:21:49-04:00"
+---
+
 <!--
   PaladinsCat Blog — Int16 Match Recovery Breakthrough
   Public-facing content. No source code or private backend details.

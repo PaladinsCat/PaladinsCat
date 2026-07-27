@@ -1,3 +1,7 @@
+---
+publishedAt: "2026-07-24T13:49:53-04:00"
+---
+
 <!--
   PaladinsCat Blog — Limited Match Classification
   Public-facing content. No source code or private backend details.
