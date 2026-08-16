@@ -10,7 +10,7 @@ publishedAt: "2026-08-16T13:30:00-04:00"
 
 # The Terminus Ability-Damage Cheat Signature
 
-> What it is and how it is detected.
+> What defines the signal, and how it is detected.
 
 ---
 
@@ -18,29 +18,23 @@ publishedAt: "2026-08-16T13:30:00-04:00"
 
 ---
 
-## What it is
+## What defines it
 
-Two per-match metrics:
+Two per-match damage metrics:
 
 - **WPM** — weapon damage per minute.
-- **APM** — ability damage per minute (total physical minus weapon damage).
+- **APM** — ability damage per minute.
 
 A no-CD ultimate exploit lets a player spam abilities while weapon damage
 stays near zero. Legitimate play cannot do that — cooldowns cap ability
-damage.
+damage. The signal is **high APM with near-zero WPM**.
 
-## Baseline
-
-12,436 ranked Terminus matches (only zero-duration bad-data rows excluded):
+Legitimate ranked Terminus play (12,436 matches):
 
 | Metric | p50 | p90 | p99 | Max |
 |--------|----:|----:|----:|----:|
 | WPM | 2,709 | 4,447 | 6,377 | 9,130 |
 | APM | 876 | 1,851 | 3,120 | 24,412 |
-
-No duration filter is needed: Siege is capture-and-push, and the shortest
-recorded ranked match is **4.9 minutes**. Sub-two-minute rows are corrupted
-data, not fast games.
 
 ## How it is detected
 
@@ -52,9 +46,6 @@ PLAYER RULE:   avg WPM = 0 AND avg APM > 1,500
 The zone catches single matches; the player rule catches intermittent
 triggers that average out. APM alone is not enough — 94 legitimate matches
 exceed 3,120 APM, but all of them deal ≥500 WPM.
-
-Bot fights (enemy disconnect, AI replacements) also produce absurd KDA; the
-bot-kill ratio in match data excludes them.
 
 ## Results
 
