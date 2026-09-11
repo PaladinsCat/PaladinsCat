@@ -57,6 +57,14 @@ entries:
     title: Focused champion pages
     summary: Champion pages now avoid duplicate global rankings and map reports, keeping those comparisons in the Stats hub where every champion can be reviewed together.
     href: /champions
+  - id: champion-changelog-history
+    kind: new
+    category: champions
+    status: upcoming
+    targetVersion: Next release
+    title: Champion changelog history
+    summary: Champion pages now include wiki-derived histories for general changes, weapons, abilities, talents, cards, and fixes.
+    href: /champions
   - id: exploiter-evidence-directory
     kind: new
     category: community
